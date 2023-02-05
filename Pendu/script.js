@@ -1,5 +1,4 @@
 const textArea = document.getElementById('textArea')
-const userInput = document.getElementById('userInput')
 const buttonsLetter = document.querySelectorAll('.btn')
 
 const listOfWord = ['Humain', 'Habitation', 'Animal', 'Lion', 'Javascript', 'Appartement', 'Investissement', 'Manuelle']
@@ -38,24 +37,23 @@ function checkLetter() {
             tempWordDisplay[y + 1] = inputLetter
         }
     }
-        textArea.innerText = ''
-        tempWordDisplay.forEach(letter => textArea.innerText += letter)
-}
-
-function init(e) {
-    if (e.key == 'Enter') {
-        inputLetter = userInput.value
-        userInput.value = ''
-        checkLetter()
-        if (hiddenLetter.length == 0) {
-            alert('Partie Terminée')
+    textArea.innerText = ''
+    tempWordDisplay.forEach(letter => textArea.innerText += letter)
+    let count = 0
+    for (item of tempWordDisplay) {
+        if (item == '_') {
+            count++
         }
+    }
+    if (count == 0) {
+        alert('Victoire')
+        buttonsLetter.forEach(btn => btn.removeEventListener())
     }
 }
 
 buttonsLetter.forEach(btn => btn.addEventListener('click', () => {
-    console.log(btn.dataset.value)
+    inputLetter = btn.dataset.value.toLowerCase()
+    checkLetter()
 }))
-userInput.addEventListener('keydown', init)
 
 
