@@ -118,7 +118,7 @@ runGameBtn.addEventListener('click', initNewGame) //Clique sur lancer
 newGameBtn.addEventListener('click', returnHome) //Clique sur Nouvelle Partie
 checkButton.addEventListener('click', checkNumbers)
 exitBtn.addEventListener('click', () => {
-    window.close()
+    window.location.href='../index.html'
 })
 
 inputNumber.addEventListener('keydown', (e) => {
