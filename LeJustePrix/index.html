@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>le Juste Prix</title>
+</head>
+<body> 
+    
+    <header>
+        <section>
+            <button class="headerbtn" id="newGameBtn">Nouvelle Partie</button>
+         </section>
+         <section>
+            <p id="compteurGame"></p>
+        </section>
+        <section>
+            <button class="headerbtn" id="exit">Quitter</button>
+        </section>
+    </header>
+    
+    <div id="container">
+        <main>
+            <div id="gameDisplay" style="display: none;">
+                <h2>Devinez le Juste Prix!</h2>
+                <div id="outputGame">
+
+                </div>
+                <div>
+                    <input id="inputGame">
+                    <br>
+                    <button id="checkButton" class="blackbtn">Valider</button>
+                </div>
+            </div>
+
+            <div id="newGameDisplay" style="display: flex;">
+                <h1>Le Juste Prix</h1>
+                <fieldset>
+                    <legend>Choisissez la difficulté</legend>
+
+                    <div>
+                        <input type="radio" id="facile" name="difficulté" value="facile"
+                        data-time="45">
+                        <label for="facile">Facile / 45 secondes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="moyen" name="difficulté" value="moyen" checked
+                        data-time="30">
+                        <label for="moyen">Moyen / 30 secondes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="difficile" name="difficulté" value="difficile"
+                        data-time="20">
+                        <label for="difficile">Difficile / 20 secondes</label>
+                    </div>
+                </fieldset>
+                <button id="runGameBtn" class="blackbtn">Lancer</button>
+
+                <div class="rules">
+                    <h2>Règles du jeu</h2>
+                    <p>Un nombre entre <strong>1</strong> et <strong>999</strong> est géneré aléatoirement par l'ordinateur. Vous devez deviner sa valeur.
+                        Entrez un nombre dans le cadre, appuyez sur 'Enter' et voyez si l'ordinateur vous dit si votre valeur
+                        est plus <span class="yellow">grande</span>, plus <span class="red">petite</span>, ou <span class="green">égal</span> au Juste Prix!
+                    </p>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+    <footer>
+        <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <cite>J. Pierre</cite>
+        <a href="https://github.com/Mltss" target="_blank"><i class="bi bi-github"></i></a>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
